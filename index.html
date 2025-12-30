@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Realty | Premium Real Estate Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gold-accent { color: #C5A059; }
+        .bg-gold { background-color: #C5A059; }
+        .bg-navy { background-color: #0F172A; }
+        .text-navy { color: #0F172A; }
+        
+        .nav-blur {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .property-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-slate-100 py-5 px-6 md:px-16 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <div class="bg-navy p-1.5 rounded">
+                <i data-lucide="building-2" class="w-6 h-6 text-white"></i>
+            </div>
+            <span class="text-xl font-800 tracking-tighter text-navy">PRESTIGE<span class="gold-accent">REALTY</span></span>
+        </div>
+        
+        <div class="hidden md:flex space-x-10 items-center text-sm font-semibold tracking-wide text-slate-600">
+            <a href="#home" class="hover:text-navy transition-colors">HOME</a>
+            <a href="#properties" class="hover:text-navy transition-colors">PROPERTIES</a>
+            <a href="#services" class="hover:text-navy transition-colors">SERVICES</a>
+            <a href="#contact" class="hover:text-navy transition-colors">CONTACT</a>
+            <a href="#contact" class="bg-navy text-white px-6 py-2.5 rounded hover:bg-slate-800 transition-all text-xs">LIST A PROPERTY</a>
+        </div>
+
+        <button class="md:hidden text-navy" id="mobileMenuBtn">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000" 
+                alt="Modern Luxury Home" 
+                class="w-full h-full object-cover"
+            >
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="relative z-10 container mx-auto px-6 md:px-16 text-white">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-800 leading-[1.1] mb-6">
+                    Find Your Perfect <br> <span class="gold-accent">Home Today</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-xl leading-relaxed">
+                    Access an exclusive portfolio of residential and commercial properties curated for the discerning investor and homeowner.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#properties" class="bg-gold text-white px-10 py-4 font-bold text-center hover:brightness-110 transition-all rounded shadow-lg">
+                        VIEW PROPERTIES
+                    </a>
+                    <a href="#contact" class="border border-white/40 backdrop-blur-md text-white px-10 py-4 font-bold text-center hover:bg-white hover:text-navy transition-all rounded">
+                        CONSULT AN AGENT
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Listings -->
+    <section id="properties" class="py-24 px-6 md:px-16 bg-white">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-4">
+                <div class="max-w-2xl">
+                    <h2 class="text-gold font-bold text-sm uppercase tracking-[0.3em] mb-3">Featured Listings</h2>
+                    <h3 class="text-4xl font-800 text-navy">Exceptional Properties</h3>
+                </div>
+                <div class="flex gap-2">
+                    <button class="p-2 border border-slate-200 rounded-full hover:bg-slate-50 transition-colors"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                    <button class="p-2 border border-slate-200 rounded-full hover:bg-slate-50 transition-colors"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white border border-slate-100 rounded-xl overflow-hidden property-card">
+                    <div class="h-64 relative">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-navy text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm">For Sale</div>
+                        <div class="absolute bottom-4 right-4 bg-white text-navy px-4 py-2 font-800 rounded shadow-sm">$2,450,000</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-700 mb-2">The Glass Pavilion</h4>
+                        <p class="text-slate-500 text-sm flex items-center gap-2 mb-6">
+                            <i data-lucide="map-pin" class="w-4 h-4 gold-accent"></i> Beverly Hills, CA
+                        </p>
+                        <div class="flex justify-between py-4 border-t border-slate-50 text-slate-600 text-sm">
+                            <span class="flex items-center gap-2"><i data-lucide="bed" class="w-4 h-4"></i> 5 Beds</span>
+                            <span class="flex items-center gap-2"><i data-lucide="bath" class="w-4 h-4"></i> 4 Baths</span>
+                            <span class="flex items-center gap-2"><i data-lucide="maximize" class="w-4 h-4"></i> 4,200 sqft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white border border-slate-100 rounded-xl overflow-hidden property-card">
+                    <div class="h-64 relative">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-gold text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm">Featured</div>
+                        <div class="absolute bottom-4 right-4 bg-white text-navy px-4 py-2 font-800 rounded shadow-sm">$1,890,000</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-700 mb-2">Modernist Villa</h4>
+                        <p class="text-slate-500 text-sm flex items-center gap-2 mb-6">
+                            <i data-lucide="map-pin" class="w-4 h-4 gold-accent"></i> Malibu, CA
+                        </p>
+                        <div class="flex justify-between py-4 border-t border-slate-50 text-slate-600 text-sm">
+                            <span class="flex items-center gap-2"><i data-lucide="bed" class="w-4 h-4"></i> 4 Beds</span>
+                            <span class="flex items-center gap-2"><i data-lucide="bath" class="w-4 h-4"></i> 3 Baths</span>
+                            <span class="flex items-center gap-2"><i data-lucide="maximize" class="w-4 h-4"></i> 3,100 sqft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white border border-slate-100 rounded-xl overflow-hidden property-card">
+                    <div class="h-64 relative">
+                        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=800" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-navy text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm">New Listing</div>
+                        <div class="absolute bottom-4 right-4 bg-white text-navy px-4 py-2 font-800 rounded shadow-sm">$950,000</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-700 mb-2">Skyline Penthouse</h4>
+                        <p class="text-slate-500 text-sm flex items-center gap-2 mb-6">
+                            <i data-lucide="map-pin" class="w-4 h-4 gold-accent"></i> Manhattan, NY
+                        </p>
+                        <div class="flex justify-between py-4 border-t border-slate-50 text-slate-600 text-sm">
+                            <span class="flex items-center gap-2"><i data-lucide="bed" class="w-4 h-4"></i> 3 Beds</span>
+                            <span class="flex items-center gap-2"><i data-lucide="bath" class="w-4 h-4"></i> 2 Baths</span>
+                            <span class="flex items-center gap-2"><i data-lucide="maximize" class="w-4 h-4"></i> 2,400 sqft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-50 px-6 md:px-16">
+        <div class="container mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-gold font-bold text-sm uppercase tracking-[0.3em] mb-3">Our Expertise</h2>
+                <h3 class="text-4xl font-800 text-navy mb-4">Professional Services</h3>
+                <p class="text-slate-500 max-w-xl mx-auto">Comprehensive real estate solutions designed to streamline your buying and selling experience.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-slate-50 text-gold rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="key" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-700 mb-3">Buy Property</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Find your dream home with expert guidance and exclusive off-market access.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-slate-50 text-gold rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="home" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-700 mb-3">Sell Property</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Maximize your return with professional marketing and expert negotiation.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-slate-50 text-gold rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-700 mb-3">Rental Services</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Premium property management and tenant placement for landlords.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-slate-50 text-gold rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-700 mb-3">Consultation</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Strategic investment advice for portfolio expansion and growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-white px-6 md:px-16 overflow-hidden">
+        <div class="container mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2 relative">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000" class="rounded-2xl shadow-2xl relative z-10">
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-gold/10 rounded-full blur-3xl"></div>
+            </div>
+            <div class="md:w-1/2 space-y-8">
+                <h2 class="text-4xl font-800 text-navy">Why Choose <br> <span class="gold-accent">Prestige Realty?</span></h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center shrink-0"><i data-lucide="user-check" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Trusted Agents</h4>
+                            <p class="text-slate-500">Highly experienced professionals with deep local market knowledge.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center shrink-0"><i data-lucide="check-circle" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Verified Listings</h4>
+                            <p class="text-slate-500">Every property undergoes strict verification to ensure safety and transparency.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center shrink-0"><i data-lucide="eye" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg">Transparent Process</h4>
+                            <p class="text-slate-500">Clear communication and legal clarity through every step of the transaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-navy text-white px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-gold font-bold text-sm uppercase tracking-[0.3em] mb-12">Client Feedback</h2>
+            <div class="max-w-4xl mx-auto italic text-xl md:text-3xl font-light leading-relaxed mb-10">
+                "Prestige Realty made our international relocation seamless. Their attention to detail and ability to find properties that matched our specific needs was unparalleled. Truly a premium experience."
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-gold">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200">
+                </div>
+                <h5 class="font-bold text-lg uppercase tracking-widest">James Harrington</h5>
+                <p class="text-slate-400 text-sm">Tech Investor</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 md:px-16 bg-white">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-4xl font-800 text-navy mb-6">Let's Find Your <br> Next Investment</h2>
+                    <p class="text-slate-500 mb-10 leading-relaxed">Whether you're looking for a family home or a commercial asset, our team is ready to assist you.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="phone" class="w-5 h-5 gold-accent"></i>
+                            <span class="font-semibold">+1 (800) 555-REALTOR</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="mail" class="w-5 h-5 gold-accent"></i>
+                            <span class="font-semibold">concierge@prestigerealty.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="map-pin" class="w-5 h-5 gold-accent"></i>
+                            <span class="font-semibold">700 Park Avenue, NY 10021</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm">
+                    <form class="space-y-4" onsubmit="event.preventDefault();">
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="First Name" class="bg-white p-4 rounded-lg w-full outline-none focus:ring-1 focus:ring-gold border border-slate-100">
+                            <input type="text" placeholder="Last Name" class="bg-white p-4 rounded-lg w-full outline-none focus:ring-1 focus:ring-gold border border-slate-100">
+                        </div>
+                        <input type="email" placeholder="Email Address" class="bg-white p-4 rounded-lg w-full outline-none focus:ring-1 focus:ring-gold border border-slate-100">
+                        <select class="bg-white p-4 rounded-lg w-full outline-none focus:ring-1 focus:ring-gold border border-slate-100 text-slate-500">
+                            <option>Interest Type</option>
+                            <option>Buy Residential</option>
+                            <option>Buy Commercial</option>
+                            <option>Sell Property</option>
+                        </select>
+                        <textarea placeholder="Tell us more about your requirements..." rows="4" class="bg-white p-4 rounded-lg w-full outline-none focus:ring-1 focus:ring-gold border border-slate-100"></textarea>
+                        <button class="bg-navy text-white w-full py-4 rounded-lg font-bold hover:bg-slate-800 transition-all uppercase tracking-widest mt-4">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-6 md:px-16 bg-white border-t border-slate-100">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+                <div class="max-w-xs">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="bg-navy p-1.5 rounded">
+                            <i data-lucide="building-2" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="text-xl font-800 tracking-tig
